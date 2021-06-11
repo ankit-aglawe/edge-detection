@@ -34,6 +34,12 @@ class SobelOperator:
         return gradientMagnitude
 
     def _get_vertical_edge(self):
+        """ The Function to get the vertical edge detections
+
+        Returns:
+            ndarray: openvc numpy image array
+        """
+        
 
         imgRow, imgCol = self._image.shape
         kernelRow, kernelCol = self.__vertical_kernel.shape
@@ -56,6 +62,12 @@ class SobelOperator:
 
 
     def _get_horizontal_edge(self):
+        """ The Funtion to get the horizontal edge detection output
+
+        Returns:
+            ndarray : image in numpy array
+        """
+        
 
         imgRow, imgCol = self._image.shape
         kernelRow, kernelCol = self.__horizontal_kernel.shape

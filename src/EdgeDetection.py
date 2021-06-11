@@ -13,11 +13,23 @@ class EdgeDetection:
         self._output = None
     
     def detect(self):
-        if self._approach == "sobel_operator":
-            edgeDetector = SobelOperator(self._image)
-            self._output = edgeDetector.proceed()
+        # TODO: Add more edge detection methods here
 
-        return self._output
+        
+        if self._approach == "sobel_operator":
+            self._getSobelOperatorOutput()
+                    
+    
+    def _getSobelOperatorOutput(self):
+        """ The function set the sobel operator detection output
+        """
+        try:
+            edgeDetector = SobelOperator(self._image)
+            self._output =  edgeDetector.proceed()
+        
+        except Exception as e:
+            print('Exception occured in Sobel operator')
+
 
 
 if __name__ == "__main__" :
